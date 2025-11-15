@@ -1,0 +1,365 @@
+/* ------------------------------
+   GLOBAL SETTINGS
+--------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #0a1a2a; /* Тёмно-синий оттенок */
+    line-height: 1.6;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ------------------------------
+   NAVBAR
+--------------------------------*/
+.navbar {
+    width: 100%;
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffffcc;
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo img {
+    width: 120px;
+}
+
+.navbar nav a {
+    margin-left: 30px;
+    font-weight: 500;
+    color: #0a1a2a;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: #1a4ba3;
+}
+
+/* ------------------------------
+   HERO — Главная
+--------------------------------*/
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 5%;
+}
+
+.hero h1 {
+    font-size: 64px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin: 15px 0 35px;
+    color: #294e7c;
+}
+
+.btn-main {
+    padding: 14px 32px;
+    background: #0a1a2a;
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-main:hover {
+    background: #14345a;
+}
+
+/* ------------------------------
+   FEATURES BLOCK — Главная
+--------------------------------*/
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 70px 8%;
+}
+
+.feature-box {
+    width: 30%;
+    padding: 30px;
+    background: #f6f8fc;
+    border-radius: 14px;
+    transition: 0.3s;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+}
+
+/* ------------------------------
+   PAGE HEADER — Заголовки страниц
+--------------------------------*/
+.page-header {
+    text-align: center;
+    padding: 80px 5% 40px;
+}
+
+.page-header h1 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.page-header p {
+    margin-top: 12px;
+    color: #4b6e99;
+}
+
+/* ------------------------------
+   SERVICES PAGE
+--------------------------------*/
+.services-list {
+    padding: 40px 8%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    background: #f6f8fc;
+    padding: 30px;
+    border-radius: 14px;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ------------------------------
+   PORTFOLIO PAGE
+--------------------------------*/
+.portfolio-gallery {
+    padding: 40px 8%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.portfolio-item img {
+    border-radius: 14px;
+    height: 260px;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.portfolio-item img:hover {
+    transform: scale(1.03);
+}
+
+/* ------------------------------
+   ABOUT PAGE
+--------------------------------*/
+.about-section {
+    padding: 50px 8%;
+}
+
+.about-section h2 {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    color: #0a1a2a;
+}
+
+.about-list li {
+    margin: 10px 0;
+}
+
+/* ------------------------------
+   CONTACT PAGE
+--------------------------------*/
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 8%;
+}
+
+.contact-info {
+    width: 45%;
+}
+
+.contact-buttons a {
+    display: block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.btn-whatsapp {
+    background: #1ebe57;
+    color: white;
+}
+
+.btn-whatsapp:hover {
+    background: #189d48;
+}
+
+.btn-telegram {
+    background: #1a73e8;
+    color: white;
+}
+
+.btn-telegram:hover {
+    background: #0f56b3;
+}
+
+.contact-form {
+    width: 45%;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #c8d3e0;
+}
+
+.contact-form textarea {
+    height: 140px;
+}
+
+.map-section iframe {
+    margin-top: 40px;
+}
+
+/* ------------------------------
+   FOOTER
+--------------------------------*/
+.footer {
+    text-align: center;
+    padding: 40px;
+    background: #f6f8fc;
+    margin-top: 60px;
+    font-size: 14px;
+    color: #5b6b80;
+}
+
+/* ------------------------------
+   RESPONSIVE
+--------------------------------*/
+@media (max-width: 900px) {
+
+    .features {
+        flex-direction: column;
+    }
+
+    .feature-box {
+        width: 100%;
+    }
+
+    .services-list,
+    .portfolio-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-section {
+        flex-direction: column;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 100%;
+    }
+}
+
+/* ------------------------------
+   SERVICES – FULLSCREEN TESLA STYLE
+--------------------------------*/
+.services-hero {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    text-align: center;
+    padding: 0 5%;
+}
+
+.services-hero h1 {
+    font-size: 58px;
+    font-weight: 700;
+}
+
+.services-hero p {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #3b4f6e;
+}
+
+
+.service-fullscreen {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.service-overlay {
+    position: absolute;
+    bottom: 12%;
+    left: 5%;
+    color: white;
+    max-width: 500px;
+}
+
+.service-overlay h2 {
+    font-size: 48px;
+    font-weight: 700;
+    text-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+.service-overlay p {
+    margin-top: 12px;
+    font-size: 20px;
+    text-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+
+/* Mobile */
+@media (max-width: 900px) {
+    .service-overlay h2 {
+        font-size: 32px;
+    }
+
+    .service-overlay p {
+        font-size: 16px;
+    }
+}
