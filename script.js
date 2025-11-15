@@ -1,11 +1,24 @@
-/* Fade Up Animation */
-.fade-up {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.7s ease;
+/* Fade-Up Animation */
+const fadeElements = document.querySelectorAll('.fade-up');
+
+function fadeInOnScroll() {
+    fadeElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            el.classList.add('visible');
+        }
+    });
 }
 
-.fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
+window.addEventListener('scroll', fadeInOnScroll);
+fadeInOnScroll();
+
+/* Mobile Menu */
+const mobileBtn = document.querySelector('.mobile-menu-btn');
+const mobileNav = document.querySelector('.mobile-nav');
+
+if (mobileBtn) {
+    mobileBtn.addEventListener('click', () => {
+        mobileNav.classList.toggle('open');
+    });
 }
